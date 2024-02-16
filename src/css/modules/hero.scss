@@ -1,11 +1,10 @@
-.hero {
-}
-
 .hero__inner {
     padding-top: 20px;
+    padding-bottom: 20px;
 
     @media (min-width: 1024px) {
         padding-top: 40px;
+        padding-bottom: 40px;
     }
 }
 

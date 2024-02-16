@@ -19,8 +19,22 @@ html(lang="en")
         main.main
             //- экран "Напиши курсовую с нейросетью за 5 минут"
             section.hero.hero--work
-                .hero__inner.content-wrapper
+                div.hero__inner.content-wrapper
                     h1.hero__heading.heading.heading--l Напиши курсовую <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
                     p.hero__text.text.text--l Генерируй содержание, получай готовую работу и&nbsp;редактируй онлайн!
 
+            section.steps
+                div.steps__inner.content-wrapper
+                    h2.steps__heading.heading.heading--m Написание курсовой&nbsp;&mdash; это просто!
+                    ul(class="steps__list" role="list") 
+                        li.steps__item
+                            img(src="assets/img/step-1.png" role="presentation")
+                            p.text.text--xl Напиши тему работы и нажми «Сгенерировать»
+                        li.steps__item
+                            img(src="assets/img/step-2.png" role="presentation")
+                            p.text.text--xl Смотри содержание, регистрируйся и покупай готовую работу
+                        li.steps__item
+                            img(src="assets/img/step-3.png" role="presentation")
+                            p.text.text--xl Редактируй онлайн, сохраняй в Word, отправляй преподавателям
+                    button(class="steps__button button button--blue text text--m" type="button") Сгенерировать работу
         footer.footer
