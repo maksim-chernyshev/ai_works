@@ -1,0 +1,43 @@
+.header {
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 20px;
+}
+
+.header__logo {
+    display: block;
+    width: 48px;
+    height: 48px;
+
+    @media (min-width: 1024px) {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+.header__auth {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.header__login {
+    span {
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+}
+
+.header__signup {
+    display: none;
+
+    @media (min-width: 1024px) {
+        display: grid;
+    }
+}

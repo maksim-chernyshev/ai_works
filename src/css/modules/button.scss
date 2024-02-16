@@ -1,0 +1,26 @@
+.button {
+    box-sizing: border-box;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media (min-width: 1024px) {
+        padding: 14px 20px;
+    }
+
+    &--blue {
+        color: var(--white);
+        background-color: var(--blue);
+    }
+
+    &--clear {
+        padding: 0;
+        color: var(--blue);
+    }
+}
