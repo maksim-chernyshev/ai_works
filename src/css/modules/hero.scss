@@ -1,0 +1,39 @@
+.hero {
+}
+
+.hero__inner {
+    padding-top: 20px;
+
+    @media (min-width: 1024px) {
+        padding-top: 40px;
+    }
+}
+
+.hero__heading {
+    margin-bottom: 8px;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+        margin-bottom: 16px;
+        text-align: start;
+    }
+
+    mark {
+        padding: 2px 5px;
+        color: var(--blue);
+        border-radius: 6px;
+        background-color: var(--blue-light);
+
+        @media (min-width: 1024px) {
+            padding: 0 10px;
+        }
+    }
+}
+
+.hero__text {
+    text-align: center;
+
+    @media (min-width: 1024px) {
+        text-align: start;
+    }
+}
