@@ -139,6 +139,10 @@
     }
 
     img {
+        display: block;
+        width: 61px;
+        height: 30px;
+
         @media (min-width: 1024px) {
             width: 50px;
             height: 25px;

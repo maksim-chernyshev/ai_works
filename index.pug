@@ -69,7 +69,7 @@ html(lang="en")
         - var footerSubjects = [{name: 'Алгебра', url: '#link'}, {name: 'Английский язык', url: '#link'}, {name: 'Анатомия', url: '#link'}, {name: 'Архитектура', url: '#link'}];
         - var footerTypes = [{name: 'Решение задач', url: '#link'}, {name: 'Рефераты', url: '#link'}, {name: 'Курсовые работы', url: '#link'}, {name: 'Доклады', url: '#link'}, {name: 'Эссе', url: '#link'}];
         - var footerAbout = [{name: 'Тарифы', url: '#link'}, {name: 'Оплата и реквизиты', url: '#link'}, {name: 'Политика возврата', url: '#link'}, {name: 'Контакты', url: '#link'}];
-        - var paymentMethods = [{name: 'Visa', file: 'visa'}, {name: 'MasterCard', file: 'mastercard'}, {name: 'Мир', file: 'mir'}, {name: 'Ю Money', file: 'umoney'}, {name: 'Qiwi', file: 'qiwi'}, {name: 'Система быстрых платежей', file: 'sbp'}, {name: 'СберPay', file: 'sberpay'}]
+        - var paymentMethods = [{name: 'Visa', file: 'visa.svg'}, {name: 'MasterCard', file: 'mastercard.svg'}, {name: 'Мир', file: 'mir.svg'}, {name: 'ЮMoney', file: 'umoney.png'}, {name: 'Qiwi', file: 'qiwi.svg'}, {name: 'Система быстрых платежей', file: 'sbp.svg'}, {name: 'СберPay', file: 'sberpay.svg'}]
 
         footer.footer
             div.footer__inner.content-wrapper 
@@ -105,4 +105,4 @@ html(lang="en")
                         ul(class="footer__payment" role="list")
                             each payment in paymentMethods
                                 li.footer__payment-item
-                                    img(src=`assets/img/${payment.file}.svg`, alt=`${payment.name}`)
+                                    img(src=`assets/img/${payment.file}`, alt=`${payment.name}`)
