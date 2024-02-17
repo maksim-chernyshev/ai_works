@@ -65,4 +65,44 @@ html(lang="en")
                         li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
                         li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
                         li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
+
+        - var footerSubjects = [{name: 'Алгебра', url: '#link'}, {name: 'Английский язык', url: '#link'}, {name: 'Анатомия', url: '#link'}, {name: 'Архитектура', url: '#link'}];
+        - var footerTypes = [{name: 'Решение задач', url: '#link'}, {name: 'Рефераты', url: '#link'}, {name: 'Курсовые работы', url: '#link'}, {name: 'Доклады', url: '#link'}, {name: 'Эссе', url: '#link'}];
+        - var footerAbout = [{name: 'Тарифы', url: '#link'}, {name: 'Оплата и реквизиты', url: '#link'}, {name: 'Политика возврата', url: '#link'}, {name: 'Контакты', url: '#link'}];
+        - var paymentMethods = [{name: 'Visa', file: 'visa'}, {name: 'MasterCard', file: 'mastercard'}, {name: 'Мир', file: 'mir'}, {name: 'Ю Money', file: 'umoney'}, {name: 'Qiwi', file: 'qiwi'}, {name: 'Система быстрых платежей', file: 'sbp'}, {name: 'СберPay', file: 'sberpay'}]
+
         footer.footer
+            div.footer__inner.content-wrapper 
+                div.footer__content
+                    div.footer__main
+                        div.footer__column
+                            img(class="footer__logo" src="assets/img/logo-inverted.svg" alt="Логотип")
+                            a(class="footer__link footer__link--email text" href="mailto:support@study.ai") support@study.ai
+                            p.footer__schedule.text.text--m.text--light Пиши с&nbsp;10:00&nbsp;&dash; 19:30
+                        div.footer__column
+                            h3.footer__list-title.text.text--m Курсовые по предметам
+                            ul(class="footer__list" role="list")
+                                each link in footerSubjects
+                                    li.footer__list-item
+                                        a(class="footer__link text text--m text--light" href=`${link.url}` target="_blank") #{link.name}
+                                li.footer__list-item
+                                    a(class="footer__link text text--m text--light" href="#" target="_blank") Все предметы
+                        div.footer__column
+                            h3.footer__list-title.text.text--m Другие GPT инструменты
+                            ul(class="footer__list" role="list")
+                                each link in footerTypes
+                                    li.footer__list-item
+                                        a(class="footer__link text text--m text--light" href=`${link.url}` target="_blank") #{link.name}
+                        div.footer__column.footer__column--about
+                            h3.footer__list-title.text.text--m О сервисе
+                            ul(class="footer__list" role="list")
+                                each link in footerAbout
+                                    li.footer__list-item
+                                        a(class="footer__link text text--m text--light" href=`${link.url}` target="_blank") #{link.name}
+                    div.footer__additional
+                        p(class="footer__copyright text text--m text--light") &copy;<span data-js="copyrightYear">2024</span>&nbsp;Все права защищены
+                        a(class="footer__link footer__link--privacy text text--m text--light" href="#" target="_blank") Пользовательское соглашение
+                        ul(class="footer__payment" role="list")
+                            each payment in paymentMethods
+                                li.footer__payment-item
+                                    img(src=`assets/img/${payment.file}.svg`, alt=`${payment.name}`)
