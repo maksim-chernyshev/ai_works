@@ -1,20 +1,14 @@
 .hero__inner {
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-    @media (min-width: 1024px) {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
+    padding-top: var(--gap-padding);
+    padding-bottom: var(--gap-padding);
 }
 
 .hero__heading {
     margin-bottom: 8px;
-    text-align: center;
+    text-align: var(--heading-text-align);
 
     @media (min-width: 1024px) {
         margin-bottom: 16px;
-        text-align: start;
     }
 
     mark {

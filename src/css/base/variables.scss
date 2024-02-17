@@ -3,8 +3,11 @@
     --white: #ffffff;
     --blue: #238def;
     --blue-light: #ebf2fa;
+    --blue-darker: #137ddf;
+    --blue-dark: #1270c8;
     --gray: #717c89;
     --gray-light: #f2f3f5;
+    --gray-dark: #575757;
 
     --font-text-14: 14px;
     --font-text-16: 16px;
@@ -22,6 +25,14 @@
     --font-lh-36: 36px;
     --font-lh-56: 56px;
     --font-lh-86: 86px;
+
+    --gap-padding: 20px;
+    --heading-text-align: center;
+
+    @media (min-width: 1024px) {
+        --gap-padding: 40px;
+        --heading-text-align: left;
+    }
 
     // 14/20 | 16/24
     // 16/24 | 18/28
