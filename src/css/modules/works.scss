@@ -1,0 +1,145 @@
+.works {
+}
+
+.works__inner {
+    padding-top: var(--gap-padding);
+    padding-bottom: var(--gap-padding);
+}
+
+.works__content {
+    overflow-x: hidden;
+    padding: 16px;
+    border-radius: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: var(--gray-light);
+
+    @media (min-width: 1024px) {
+        padding: 40px 48px 48px;
+    }
+}
+
+.works__heading-text {
+    color: var(--gray-dark);
+    text-align: var(--heading-text-align);
+}
+
+.works__swiper-header {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 4px 0 16px;
+
+    @media (min-width: 1024px) {
+        margin-bottom: 32px;
+    }
+}
+
+.works__swiper-controls {
+    display: none;
+
+    @media (min-width: 1024px) {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+.works__swiper-controls-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--blue);
+    transition: opacity 0.2s, background-color 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--blue-dark);
+    }
+
+    &:disabled {
+        background-color: rgba(35, 141, 239, 0.4);
+        cursor: default;
+    }
+}
+
+.works__swiper-controls-button--prev {
+    transform: rotate(180deg);
+}
+
+.works__heading {
+    text-align: var(--heading-text-align);
+}
+
+// todo временно е решение
+.works__list {
+    .swiper-wrapper {
+        display: flex;
+        gap: 16px;
+    }
+}
+
+.works__item {
+    display: grid;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: var(--white);
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.08);
+
+    @media (min-width: 1024px) {
+        padding: 20px;
+    }
+}
+
+.works__item-title {
+    order: 4;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.works__item-label {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    padding: 8px 16px;
+    border-radius: 24px;
+    background-color: var(--blue-light);
+
+    &--unique {
+        margin-bottom: 12px;
+    }
+
+    img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.works__item-label-text {
+    color: var(--blue);
+}
+
+.works__file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 89px;
+    margin: 20px 0;
+    color: var(--white);
+    background-image: url("../assets/img/file.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media (min-width: 1024px) {
+        width: 84px;
+        height: 100px;
+    }
+}

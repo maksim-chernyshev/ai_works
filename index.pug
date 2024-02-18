@@ -52,6 +52,32 @@ html(lang="en")
                             li.solution__item.text.text--m.text--light Серый задумался и загадал, чтобы у всех животных в лесу было достаточно еды и тепла.
                         button(class="solution__button button button--blue text text--m" type="button") Сгенерировать работу
 
+            - var works = [{name: 'Маркетинговый анализ деятельности фирмы', fileType: 'DOC', unique: '97.7', symbols: '1283'}, {name: 'Маркетинговый анализ фирмы', fileType: 'PDF', unique: '55', symbols: '300'}, {name: 'Анализвываываывавыаываываываываываываыва', fileType: 'EXL', unique: '100', symbols: '3'}, {name: 'Маркетинговый анализ фирмы', fileType: 'PDF', unique: '55', symbols: '300'}, {name: 'Анализвываываывавыаываываываываываываыва', fileType: 'EXL', unique: '100', symbols: '3'}];
+
+            section.works
+                div.works__inner.content-wrapper
+                    div.works__content 
+                        div.works__heading-text.text.text--xl Написаны искусственным интеллектом
+                        div.works__swiper-header
+                            h2.works__heading.heading.heading--m Примеры готовых работ
+                            div.works__swiper-controls
+                                button(class="works__swiper-controls-button works__swiper-controls-button--prev" aria-label="Предыдущая работа")
+                                    img(src="assets/img/caret-right.svg" role="presentation")
+                                button(class="works__swiper-controls-button works__swiper-controls-button--next" aria-label="Следующая работа")
+                                    img(src="assets/img/caret-right.svg" role="presentation")
+                        div(class="works__list swiper" data-js="worksSwiper")
+                            div.swiper-wrapper
+                                each work in works
+                                    div.works__item.swiper-slide
+                                        h3.works__item-title.text.text--m #{work.name}
+                                        div.works__item-label.works__item-label--unique
+                                            img(src="assets/img/like.png" role="presentation")
+                                            div.works__item-label-text.text.text--s.text--light #{work.unique}% антиплагиат
+                                        div.works__item-label
+                                            img(src="assets/img/pen.png" role="presentation")
+                                            div.works__item-label-text.text.text--s.text--light #{work.symbols}&nbsp;<span>символов</span>
+                                        div.works__file.text.text--m #{work.fileType}
+
             section.seo 
                 div.seo__inner.content-wrapper
                     h2 SEO текст
@@ -106,3 +132,5 @@ html(lang="en")
                             each payment in paymentMethods
                                 li.footer__payment-item
                                     img(src=`assets/img/${payment.file}`, alt=`${payment.name}`)
+
+        script(src="js/main.min.js")
