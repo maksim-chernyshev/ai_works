@@ -78,19 +78,84 @@ html(lang="en")
                                             div.works__item-label-text.text.text--s.text--light #{work.symbols}&nbsp;<span>символов</span>
                                         div.works__file.text.text--m #{work.fileType}
 
-            section.seo 
-                div.seo__inner.content-wrapper
-                    h2 SEO текст
-                    p Забудьте о трудоемком написании курсовых работ – наша нейросеть сделает это за вас, обеспечивая высокий уровень уникальности и качества. Воспользуйтесь удобным чат-ботом, который будет направлять вас в процессе написания.
-                    p Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
-                    p Забудьте о трудоемком написании курсовых работ – наша нейросеть сделает это за вас, обеспечивая высокий уровень уникальности и качества. Воспользуйтесь удобным чат-ботом, который будет направлять вас в процессе написания.
-                    p Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
+            - var subjectsAll = [{name: 'Математика', link: '#link'}, {name: 'Еще математика', link: '#link'}, {name: 'Естественный', link: '#link'}, {name: 'Еще естественный', link: '#link'}, {name: 'Гуманитарный', link: '#link'}, {name: 'Еще гуманитарный', link: '#link'}, {name: 'Популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}];
+            - var subjectsTech = [{name: 'Математика', link: '#link'}, {name: 'Еще математика', link: '#link'}];
+            - var subjectsNatural = [{name: 'Естественный', link: '#link'}, {name: 'Еще естественный', link: '#link'}];
+            - var subjectsHumanitarian = [{name: 'Гуманитарный', link: '#link'}, {name: 'Еще гуманитарный', link: '#link'}];
+            - var subjectsPopular = [{name: 'Популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}];
 
-                    h2 SEO список
-                    ol
-                        li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
-                        li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
-                        li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
+            section(class="listings" data-js="listings")
+                div.listings__inner.content-wrapper
+                    h2.listings__heading.heading.heading--m Курсовые по другим предметам
+                    form(class="search-form" action="#" method="get" data-js="listingsForm")
+                        div.search-form__field
+                            input(class="search-form__input" type="text" maxlength="100" placeholder="Найти предмет" aria-label="Найти предмет" data-js="searchInput")
+                            button(class="search-form__reset-btn" type="button" data-js="clearInput")
+                                span.visually-hidden Очистить поле поиска
+                                img(src="assets/img/close.svg" role="presentation")
+                            div.search-form__decor-loupe
+                                img(src="assets/img/search.svg" role="presentation")
+                    div(class="listings__control" data-js="listingsTabButtons" role="tablist")
+                        button(class="listings__category-button" type="button" tabindex="0" role="tab" aria-controls="all" aria-selected="true")
+                            span.text.text--m Все&nbsp;предметы
+                        button(class="listings__category-button" type="button" tabindex="-1" role="tab" aria-controls="tech" aria-selected="false")
+                            span.text.text--m Технические
+                        button(class="listings__category-button" type="button" tabindex="-1" role="tab" aria-controls="natural" aria-selected="false")
+                            span.text.text--m Естественные
+                        button(class="listings__category-button" type="button" tabindex="-1" role="tab" aria-controls="humanitarian" aria-selected="false")
+                            span.text.text--m Гуманитарные
+                        button(class="listings__category-button" type="button" tabindex="-1" role="tab" aria-controls="popular" aria-selected="false")
+                            span.text.text--m Популярные
+
+                    div(class="listings__category-tabs" data-js="categoryTabsRoot")
+                        div(class="listings__category-tab" data-js="linksContainer" id="all" role="tabpanel" data-is-active)
+                            ul(class="listings__subjects-list" role="list")
+                                each subject in subjectsAll
+                                    li.listings__subject
+                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+
+                        div(class="listings__category-tab" data-js="linksContainer" id="tech" role="tabpanel")
+                            ul(class="listings__subjects-list" role="list")
+                                each subject in subjectsTech
+                                    li.listings__subject
+                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+
+                        div(class="listings__category-tab" data-js="linksContainer" id="natural" role="tabpanel")
+                            ul(class="listings__subjects-list" role="list")
+                                each subject in subjectsNatural
+                                    li.listings__subject
+                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+
+                        div(class="listings__category-tab" data-js="linksContainer" id="humanitarian" role="tabpanel")
+                            ul(class="listings__subjects-list" role="list")
+                                each subject in subjectsHumanitarian
+                                    li.listings__subject
+                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+
+                        div(class="listings__category-tab" data-js="linksContainer" id="popular" role="tabpanel")
+                            ul(class="listings__subjects-list" role="list")
+                                each subject in subjectsPopular
+                                    li.listings__subject
+                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+
+        section.seo 
+            div.seo__inner.content-wrapper
+                h2 SEO текст
+                p Забудьте о трудоемком написании курсовых работ – наша нейросеть сделает это за вас, обеспечивая высокий уровень уникальности и качества. Воспользуйтесь удобным чат-ботом, который будет направлять вас в процессе написания.
+                p Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
+                p Забудьте о трудоемком написании курсовых работ – наша нейросеть сделает это за вас, обеспечивая высокий уровень уникальности и качества. Воспользуйтесь удобным чат-ботом, который будет направлять вас в процессе написания.
+                p Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
+
+                h2 SEO список
+                ol
+                    li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
+                    li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
+                    li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
 
         - var footerSubjects = [{name: 'Алгебра', url: '#link'}, {name: 'Английский язык', url: '#link'}, {name: 'Анатомия', url: '#link'}, {name: 'Архитектура', url: '#link'}];
         - var footerTypes = [{name: 'Решение задач', url: '#link'}, {name: 'Рефераты', url: '#link'}, {name: 'Курсовые работы', url: '#link'}, {name: 'Доклады', url: '#link'}, {name: 'Эссе', url: '#link'}];
@@ -133,4 +198,4 @@ html(lang="en")
                                 li.footer__payment-item
                                     img(src=`assets/img/${payment.file}`, alt=`${payment.name}`)
 
-        script(src="js/main.min.js")
+        script(src="js/main.min.js" type="module")

@@ -42,4 +42,17 @@
             color: var(--blue-dark);
         }
     }
+
+    &--white {
+        color: var(--blue);
+        background-color: var(--white);
+
+        &:hover {
+            background-color: var(--blue-light);
+        }
+
+        &:active {
+            background-color: var(--blue-ligth);
+        }
+    }
 }
