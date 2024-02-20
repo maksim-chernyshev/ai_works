@@ -1,0 +1,207 @@
+.hero-task__content {
+    position: relative;
+    margin-top: 40px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: var(--gray-light);
+
+    @media (min-width: 1024px) {
+        margin-top: 80px;
+        padding: 40px 48px 48px;
+    }
+
+    @media (min-width: 1280px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        padding: 32px 40px 40px;
+    }
+}
+
+.hero-task__query {
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    @media (min-width: 1024px) {
+        border-bottom: none;
+    }
+
+    @media (min-width: 1280px) {
+        margin-right: 40px;
+    }
+}
+
+.hero-task__query-label {
+    color: var(--gray);
+}
+
+.hero-task__form {
+    display: grid;
+}
+
+.hero-task__form-box {
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    margin-top: 8px;
+    margin-bottom: 16px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: var(--white);
+
+    @media (min-width: 1024px) {
+        margin-bottom: 24px;
+    }
+}
+
+.hero-task__textarea {
+    min-height: 160px;
+    padding: 12px 16px 40px 16px;
+    scroll-padding: 40px;
+    border: none;
+    border-radius: 8px;
+    resize: none;
+
+    @media (min-width: 1024px) {
+        min-height: 345px;
+        padding: 16px 16px 48px 16px;
+    }
+}
+
+.hero-task__file-label {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    width: calc(100% - 24px);
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: var(--white);
+
+    &--mobile {
+        @media (min-width: 1024px) {
+            display: none;
+        }
+
+        span {
+            color: var(--blue);
+        }
+    }
+
+    &--desktop {
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: grid;
+            color: var(--black);
+        }
+
+        label {
+            color: var(--blue);
+            cursor: pointer;
+
+            &:hover {
+                color: var(--blue-dark);
+            }
+        }
+    }
+}
+
+.hero-task__counter {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    color: var(--blue);
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        top: -31px;
+        right: 48px;
+
+        padding: 5px 15px;
+        border: 1px solid var(--white);
+        border-radius: 100px;
+        background-color: var(--blue-light);
+    }
+
+    img {
+        display: block;
+    }
+
+    div {
+        position: relative;
+        margin-left: 10px;
+
+        &:hover {
+            &:before {
+                content: "Тут какая-то подсказка";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50px);
+                z-index: 2;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 50px;
+
+                font-size: 12px;
+                line-height: 18px;
+                text-align: center;
+
+                border: 1px solid var(--blue);
+                border-radius: 4px;
+
+                background-color: var(--white);
+            }
+        }
+    }
+}
+
+.hero-task__button {
+    justify-self: center;
+
+    @media (min-width: 1024px) {
+        justify-self: start;
+    }
+}
+
+.hero-task__result {
+    display: grid;
+    align-items: center;
+    min-height: 250px;
+    margin-top: 16px;
+    background-color: var(--white);
+    border-radius: 12px;
+
+    box-shadow: 0px 2px 24px 0px #00000014, 0px 0px 2px 0px #00000014;
+
+    @media (min-width: 1024px) {
+        min-height: 536px;
+        border-bottom: none;
+    }
+
+    @media (min-width: 1280px) {
+        margin-top: -33px;
+        width: calc(100% + 41px);
+        height: calc(100% + 74px);
+    }
+}
+
+.hero-task__preview-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    color: gray;
+    text-align: center;
+}

@@ -18,10 +18,37 @@ html(lang="en")
                     button(class="header__signup button button--blue text text--m" type="button") Зарегистрироваться
         main.main
             //- экран "Напиши курсовую с нейросетью за 5 минут"
-            section.hero.hero--work
+            //- section.hero.hero-work
+            //-     div.hero__inner.content-wrapper
+            //-         h1.hero__heading.heading.heading--l Напиши курсовую <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
+            //-         p.hero__text.text.text--l Генерируй содержание, получай готовую работу и&nbsp;редактируй онлайн!
+            section.hero.hero-task
                 div.hero__inner.content-wrapper
-                    h1.hero__heading.heading.heading--l Напиши курсовую <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
-                    p.hero__text.text.text--l Генерируй содержание, получай готовую работу и&nbsp;редактируй онлайн!
+                    h1.hero__heading.heading.heading--l Решай задачи <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
+                    p.hero__text.text.text--l Трудное задание? Просто загрузи фото или пропиши задание текстом и&nbsp;получи ответ!
+
+                    div.hero-task__content
+                        div.hero-task__query
+                            label(class="hero-task__query-label text text--m" for="query-input") Твоя задача
+                            form(class="hero-task__form" action="#" method="post")
+                                div.hero-task__form-box
+                                    textarea(class="hero-task__textarea text text--m text--light" id="query-input" placeholder="Напиши подробно задачу")
+                                    label(class="hero-task__file-label hero-task__file-label--mobile text text--m" for="file") 
+                                        img(src="assets/img/file-img.svg" role="presentation")    
+                                        span Или загрузи фото
+                                    label.hero-task__file-label.hero-task__file-label--desktop
+                                        img(src="assets/img/file-img.svg" role="presentation") 
+                                        span.text.text--m.text--light Перетащи файл&nbsp;<label class="text text--m" for="file">или загрузи с компьютера</label>
+                                    input(class="hero-task__file-input visually-hidden" type="file" id="file")
+                                button(class="hero-task__button button button--blue" type="button") Решить задачу
+                            div.hero-task__counter.text.text--m
+                                | У тебя&nbsp;<span data-js="attempts">8</span>&nbsp;генераций
+                                div
+                                    img(class="hero-task__counter-tip" src="assets/img/question.svg")
+                        div.hero-task__result
+                            div.hero-task__preview-text.text.text--m Решение задачи будет здесь
+
+
 
             section.steps
                 div.steps__inner.content-wrapper

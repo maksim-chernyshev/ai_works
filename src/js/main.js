@@ -1,5 +1,3 @@
-
-
 // listings section
 
 const listingsRoot = document.querySelector('[data-js="listings"]');

@@ -6,12 +6,13 @@
 .works__content {
     overflow-x: hidden;
     padding: 16px;
-    border-radius: 24px;
+    border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     background-color: var(--gray-light);
 
     @media (min-width: 1024px) {
         padding: 40px 48px 48px;
+        border-radius: 24px;
     }
 }
 

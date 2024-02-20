@@ -1,14 +1,34 @@
 .hero__inner {
+    position: relative;
     padding-top: var(--gap-padding);
     padding-bottom: var(--gap-padding);
 }
 
 .hero__heading {
+    position: relative;
     margin-bottom: 8px;
     text-align: var(--heading-text-align);
 
     @media (min-width: 1024px) {
         margin-bottom: 16px;
+    }
+
+    @media (min-width: 1280px) {
+        &:before {
+            content: "";
+            position: absolute;
+            top: -40px;
+            right: -140px;
+            z-index: -1;
+
+            width: 504px;
+            height: 373px;
+
+            background-image: url(../assets/img/hero-img.png);
+            background-size: 504px;
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
     }
 
     mark {
