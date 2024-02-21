@@ -9,6 +9,7 @@
     padding: 12px 22px;
     border: 0;
     border-radius: 10px;
+    font-weight: 500;
     background-color: transparent;
     cursor: pointer;
     transition: color 0.2s, background-color 0.2s;
@@ -50,10 +51,6 @@
 
         &:hover {
             background-color: var(--blue-light);
-        }
-
-        &:active {
-            background-color: var(--blue-ligth);
         }
     }
 }

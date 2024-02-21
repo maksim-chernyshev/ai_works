@@ -48,8 +48,6 @@ html(lang="en")
                         div.hero-task__result
                             div.hero-task__preview-text.text.text--m Решение задачи будет здесь
 
-
-
             section.steps
                 div.steps__inner.content-wrapper
                     h2.steps__heading.heading.heading--m Написание курсовой&nbsp;&mdash; это просто!
@@ -78,6 +76,36 @@ html(lang="en")
                             li.solution__item.text.text--m.text--light Рыжик сразу решился и загадал, чтобы весь лес был полон вкусных орехов.
                             li.solution__item.text.text--m.text--light Серый задумался и загадал, чтобы у всех животных в лесу было достаточно еды и тепла.
                         button(class="solution__button button button--blue text text--m" type="button") Сгенерировать работу
+
+            - var tariffCards = [{label: 'Генерация 3-х работ', tip: 'Тут подсказка для карточки', price: '640' }, {label: 'Генерация 10-и работ', tip: 'Тут подсказка для карточки', price: '2500' },{label: 'Генерация 3-х работ', tip: 'Тут подсказка для карточки', price: '640' }]
+
+            section.tariffs
+                div.tariffs__inner.content-wrapper
+                    div.tariffs__header-box
+                        h2.tariffs__heading.heading.heading--m Выбери число генераций
+                        .tariffs__toggler
+                            input.tariffs__toggle-input.visually-hidden(type="radio" name="tariff" id="tariff_monthly" value="monthly" checked)
+                            label.tariffs__toggle-button.button.tariffs__toggle-button--monthly(for="tariff_monthly")
+                                span.text.text--m
+                                | <span class="tariffs__toggle-button-desktop-text">Платить</span>&nbsp;ежемесячно
+
+                            input.tariffs__toggle-input.visually-hidden(type="radio" name="tariff" id="tariff_annually" value="annually" aria-label="Выгоднее")
+                            label.tariffs__toggle-button.button.tariffs__toggle-button--annually(for="tariff_annually")
+                                span.text.text--m Оплатить на год
+                            span.tariffs__offer-label.text.text--m(aria-hidden="true") Выгоднее
+                    ul.tariffs__cards(role="list")
+                        each card in tariffCards 
+                            li.tariffs__card
+                                h3.tariffs__card-label
+                                    span.tariffs__card-label-text.text.text--m #{card.label}
+                                    img(src="assets/img/question.svg" role="presentation")
+                                    span.tariffs__card-label-tip #{card.tip}
+                                div.traiffs__price #{card.price}&nbsp;₽
+                                ul.tariffs__card-list(role="list")  
+                                    li.tariffs__card-list-item.text.text--m.text--light Выгода номер один
+                                    li.tariffs__card-list-item.text.text--m.text--light Выгода номер два
+                                    li.tariffs__card-list-item.text.text--m.text--light Выгода номер три
+                                button.tariffs__card-button.button.button--blue(type="button") Выбрать
 
             - var works = [{name: 'Маркетинговый анализ деятельности фирмы', fileType: 'DOC', unique: '97.7', symbols: '1283'}, {name: 'Маркетинговый анализ фирмы', fileType: 'PDF', unique: '55', symbols: '300'}, {name: 'Анализвываываывавыаываываываываываываыва', fileType: 'EXL', unique: '100', symbols: '3'}, {name: 'Маркетинговый анализ фирмы', fileType: 'PDF', unique: '55', symbols: '300'}, {name: 'Анализвываываывавыаываываываываываываыва', fileType: 'EXL', unique: '100', symbols: '3'}];
 
@@ -170,7 +198,7 @@ html(lang="en")
                                         a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
                             button.listings__subjects-button.button.button--white Показать еще 124 предмета
 
-        section.seo 
+            section.seo 
             div.seo__inner.content-wrapper
                 h2 SEO текст
                 p Забудьте о трудоемком написании курсовых работ – наша нейросеть сделает это за вас, обеспечивая высокий уровень уникальности и качества. Воспользуйтесь удобным чат-ботом, который будет направлять вас в процессе написания.
@@ -184,10 +212,10 @@ html(lang="en")
                     li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
                     li Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
 
-        - var footerSubjects = [{name: 'Алгебра', url: '#link'}, {name: 'Английский язык', url: '#link'}, {name: 'Анатомия', url: '#link'}, {name: 'Архитектура', url: '#link'}];
-        - var footerTypes = [{name: 'Решение задач', url: '#link'}, {name: 'Рефераты', url: '#link'}, {name: 'Курсовые работы', url: '#link'}, {name: 'Доклады', url: '#link'}, {name: 'Эссе', url: '#link'}];
-        - var footerAbout = [{name: 'Тарифы', url: '#link'}, {name: 'Оплата и реквизиты', url: '#link'}, {name: 'Политика возврата', url: '#link'}, {name: 'Контакты', url: '#link'}];
-        - var paymentMethods = [{name: 'Visa', file: 'visa.svg'}, {name: 'MasterCard', file: 'mastercard.svg'}, {name: 'Мир', file: 'mir.svg'}, {name: 'ЮMoney', file: 'umoney.png'}, {name: 'Qiwi', file: 'qiwi.svg'}, {name: 'Система быстрых платежей', file: 'sbp.svg'}, {name: 'СберPay', file: 'sberpay.svg'}]
+            - var footerSubjects = [{name: 'Алгебра', url: '#link'}, {name: 'Английский язык', url: '#link'}, {name: 'Анатомия', url: '#link'}, {name: 'Архитектура', url: '#link'}];
+            - var footerTypes = [{name: 'Решение задач', url: '#link'}, {name: 'Рефераты', url: '#link'}, {name: 'Курсовые работы', url: '#link'}, {name: 'Доклады', url: '#link'}, {name: 'Эссе', url: '#link'}];
+            - var footerAbout = [{name: 'Тарифы', url: '#link'}, {name: 'Оплата и реквизиты', url: '#link'}, {name: 'Политика возврата', url: '#link'}, {name: 'Контакты', url: '#link'}];
+            - var paymentMethods = [{name: 'Visa', file: 'visa.svg'}, {name: 'MasterCard', file: 'mastercard.svg'}, {name: 'Мир', file: 'mir.svg'}, {name: 'ЮMoney', file: 'umoney.png'}, {name: 'Qiwi', file: 'qiwi.svg'}, {name: 'Система быстрых платежей', file: 'sbp.svg'}, {name: 'СберPay', file: 'sberpay.svg'}]
 
         footer.footer
             div.footer__inner.content-wrapper 

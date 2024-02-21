@@ -7,6 +7,10 @@ html {
     font-variation-settings: "slnt" 0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .visually-hidden {
     position: absolute !important;
     width: 1px !important;
