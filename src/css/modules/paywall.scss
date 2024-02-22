@@ -18,13 +18,17 @@
         width: calc(100% - 32px);
     }
 
+    &--work {
+        margin-top: 24px;
+    }
+
     p {
         max-width: 293px;
         text-align: center;
     }
 }
 
-.paywall__button {
+.paywall__button-login {
     span {
         display: none;
 

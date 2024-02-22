@@ -2,37 +2,23 @@
     color: var(--white);
 }
 
-.footer__link {
-    display: block;
-    width: max-content;
-    color: var(--white);
+.footer__email {
+    margin: 24px 0 4px;
+    font-size: var(--font-text-20);
+    line-height: var(--font-lh-32);
     text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.32);
-    transition: color 0.2s, border-color 0.2s;
+    border-bottom: none;
 
-    &:hover {
-        color: rgba(255, 255, 255, 0.72);
-        border-bottom-color: transparent;
+    @media (min-width: 1024px) {
+        margin: 32px 0 8px;
     }
+}
 
-    &--email {
-        margin: 24px 0 4px;
-        font-size: var(--font-text-20);
-        line-height: var(--font-lh-32);
-        text-decoration: none;
-        border-bottom: none;
+.footer__privacy {
+    margin: 0 auto 40px;
 
-        @media (min-width: 1024px) {
-            margin: 32px 0 8px;
-        }
-    }
-
-    &--privacy {
-        margin: 0 auto 40px;
-
-        @media (min-width: 1024px) {
-            margin-bottom: 0;
-        }
+    @media (min-width: 1024px) {
+        margin-bottom: 0;
     }
 }
 

@@ -18,11 +18,37 @@ html(lang="en")
                     button.header__signup.button.button--blue.text.text--m(type="button") Зарегистрироваться
         main.main
             //- экран "Напиши курсовую с нейросетью за 5 минут"
-            //- section.hero.hero-work
-            //-     .hero__inner.content-wrapper
-            //-         h1.hero__heading.heading.heading--l Напиши курсовую <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
-            //-         p.hero__text.text.text--l Генерируй содержание, получай готовую работу и&nbsp;редактируй онлайн!
-            section.hero.hero-task
+            section.hero.hero-work
+                .hero__inner.content-wrapper
+                    h1.hero__heading.heading.heading--l Напиши курсовую <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
+                    p.hero__text.text.text--l Генерируй содержание, получай готовую работу и&nbsp;редактируй онлайн!
+
+                    .hero-work__content
+                        .hero-work__query
+                            label.hero-work__label.text.text--m(for="query-input") Напиши тему работы
+                            form.hero-work__form(action="#" method="post")
+                                input.hero-work__input.text.text--m.text--light(type="text" name="query" id="query-input" placeholder="Напиши тему работы")
+                                button.hero-work__button.button.button--blue(type="button") Сгенерировать
+                            .hero-work__counter.text.text--m
+                                | У тебя&nbsp;<span data-js="attempts">8</span>&nbsp;генераций
+                                .hero-work__tooltip.tooltip
+                                    img(src="assets/img/question.svg")
+                                    span Тут будет какая-то подсказка
+                        .hero-work__result
+                            .hero-work__label.text.text--m Готовая работа
+                            .hero-work__editor-box
+                                //- | <div style="justify-self: center;">Заглушка под редактор</div>
+                                //-     .loader-box(data-js="loader")
+                                //-         .loader-box__loader
+                                //-         p.loader-box__heading.text.text--m.text--bold Нейросеть решает твою задачу
+                                //-         p.loader-box__text.text.text--m Это займет всего пару минут
+                            .paywall.paywall--work(data-js="paywall")
+                                p.text.text--m Авторизуйся и&nbsp;оплати подписку, чтобы получить решение
+                                button.paywall__button-login.button.button--blue(data-js="openLogin" type="button") Авторизоваться<span>&nbsp;и&nbsp;оплатить</span>
+                                button.paywall__button-reset.button.button--clear(data-js="resetForm" type="button") Не&nbsp;уверен&nbsp;&mdash; покажи 1&nbsp;раздел
+
+            //- Экран решения задачи
+            //- section.hero.hero-task
                 .hero__inner.content-wrapper
                     h1.hero__heading.heading.heading--l Решай задачи <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
                     p.hero__text.text.text--l Трудное задание? Просто загрузи фото или пропиши задание текстом и&nbsp;получи ответ!
@@ -86,7 +112,7 @@ html(lang="en")
                             li.solution__item.text.text--m.text--light Серый задумался и загадал, чтобы у всех животных в лесу было достаточно еды и тепла.
                         button.solution__button.button.button--blue.text.text--m(type="button") Сгенерировать работу
 
-            - var tariffCards = [{label: 'Генерация 3-х работ', tip: 'Тут подсказкsadasdasdas dsd asd as dasа для карточки', price: '640' }, {label: 'Генерация 10-и работ', tip: 'Тут подсказка для карточки', price: '2500' },{label: 'Генерация 3-х работ', tip: 'Тут подсказка для карточки', price: '640' }]
+            - var tariffCards = [{label: 'Генерация 3-х работ', price: '640' }, {label: 'Генерация 10-и работ', price: '2500' },{label: 'Генерация 3-х работ', price: '640' }]
 
             section.tariffs
                 .tariffs__inner.content-wrapper
@@ -189,35 +215,35 @@ html(lang="en")
                             ul.listings__subjects-list(role="list")
                                 each subject in subjectsAll
                                     li.listings__subject
-                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                                        a.link.text.text--m.text--light(href=subject.link) #{subject.name}
                             button.listings__subjects-button.button.button--white(type="button") Показать еще 7 предмета
 
                         .listings__category-tab(data-js="linksContainer" id="tech" role="tabpanel")
                             ul.listings__subjects-list(role="list")
                                 each subject in subjectsTech
                                     li.listings__subject
-                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                                        a.link.text.text--m.text--light(href=subject.link) #{subject.name}
                             button.listings__subjects-button.button.button--white(type="button") Показать еще 2 предмета
 
                         .listings__category-tab(data-js="linksContainer" id="natural" role="tabpanel")
                             ul.listings__subjects-list(role="list")
                                 each subject in subjectsNatural
                                     li.listings__subject
-                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                                        a.link.text.text--m.text--light(href=subject.link) #{subject.name}
                             button.listings__subjects-button.button.button--white(type="button") Показать еще 23 предмета
 
                         .listings__category-tab(data-js="linksContainer" id="humanitarian" role="tabpanel")
                             ul.listings__subjects-list(role="list")
                                 each subject in subjectsHumanitarian
                                     li.listings__subject
-                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                                        a.link.text.text--m.text--light(href=subject.link) #{subject.name}
                             button.listings__subjects-button.button.button--white(type="button") Показать еще 62 предмета
 
                         .listings__category-tab(data-js="linksContainer" id="popular" role="tabpanel")
                             ul.listings__subjects-list(role="list")
                                 each subject in subjectsPopular
                                     li.listings__subject
-                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                                        a.link.text.text--m.text--light(href=subject.link) #{subject.name}
                             button.listings__subjects-button.button.button--white(type="button") Показать еще 124 предмета
 
             section.seo 
@@ -245,32 +271,32 @@ html(lang="en")
                     .footer__main
                         .footer__column
                             img.footer__logo(src="assets/img/logo-inverted.svg" alt="Логотип")
-                            a.footer__link.footer__link--email.text(href="mailto:support@study.ai") support@study.ai
+                            a.footer__email.link.text(href="mailto:support@study.ai") support@study.ai
                             p.footer__schedule.text.text--m.text--light Пиши с&nbsp;10:00&nbsp;&dash; 19:30
                         .footer__column
                             h3.footer__list-title.text.text--m Курсовые по предметам
                             ul.footer__list(role="list")
                                 each link in footerSubjects
                                     li.footer__list-item
-                                        a.footer__link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
+                                        a.link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
                                 li.footer__list-item
-                                    a.footer__link.text.text--m.text--light(href="#" target="_blank") Все предметы
+                                    a.link.text.text--m.text--light(href="#" target="_blank") Все предметы
                         .footer__column
                             h3.footer__list-title.text.text--m Другие GPT инструменты
                             ul.footer__list(role="list")
                                 each link in footerTypes
                                     li.footer__list-item
-                                        a.footer__link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
+                                        a.link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
                         .footer__column.footer__column--about
                             h3.footer__list-title.text.text--m О сервисе
                             ul.footer__list(role="list")
                                 each link in footerAbout
                                     li.footer__list-item
-                                        a.footer__link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
+                                        a.link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
                     .footer__additional
                         p.footer__copyright.text.text--m.text--light 
                             | &copy;<span data-js="copyrightYear">2024</span>&nbsp;Все права защищены
-                        a.footer__link.footer__link--privacy.text.text--m.text--light(href="#" target="_blank") Пользовательское соглашение
+                        a.footer__privacy.link.text.text--m.text--light(href="#" target="_blank") Пользовательское соглашение
                         ul.footer__payment(role="list")
                             each payment in paymentMethods
                                 li.footer__payment-item

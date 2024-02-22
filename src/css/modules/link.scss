@@ -1,0 +1,13 @@
+.link {
+    display: block;
+    width: max-content;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+    transition: color 0.2s, border-color 0.2s;
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.72);
+        border-bottom-color: transparent;
+    }
+}

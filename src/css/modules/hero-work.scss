@@ -1,0 +1,100 @@
+.hero-work__content {
+    position: relative;
+    margin-top: 40px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: var(--gray-light);
+
+    @media (min-width: 1024px) {
+        margin-top: 80px;
+        padding: 40px 48px 48px;
+    }
+}
+
+.hero-work__query {
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    @media (min-width: 1024px) {
+        border-bottom: none;
+    }
+}
+
+.hero-work__label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--gray);
+}
+
+.hero-work__form {
+    display: grid;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+    }
+}
+
+.hero-work__input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 11px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+
+    @media (min-width: 1024px) {
+        margin-bottom: 0;
+        padding: 13px 15px;
+    }
+}
+
+.hero-work__counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    color: var(--blue);
+
+    @media (min-width: 1024px) {
+        position: absolute;
+        top: -31px;
+        right: 48px;
+        z-index: 1;
+
+        padding: 5px 15px;
+        border: 1px solid var(--white);
+        border-radius: 100px;
+        background-color: var(--blue-light);
+    }
+}
+
+.hero-work__tooltip {
+    margin-left: 10px;
+}
+
+.hero-work__button {
+    justify-self: center;
+}
+
+.hero-work__result {
+    margin-top: 16px;
+}
+
+.hero-work__editor-box {
+    box-sizing: border-box;
+    display: grid;
+    align-items: center;
+    height: 400px;
+    padding: 16px;
+    background-color: var(--white);
+    border-radius: 12px;
+
+    box-shadow: 0px 2px 24px 0px #00000014, 0px 0px 2px 0px #00000014;
+
+    @media (min-width: 1024px) {
+        height: 537px;
+        padding: 32px 40px 40px;
+    }
+}
