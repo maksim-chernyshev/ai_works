@@ -1,0 +1,34 @@
+.tooltip {
+    position: relative;
+
+    img {
+        display: block;
+        cursor: pointer;
+    }
+
+    span {
+        display: none;
+    }
+
+    img:hover + span {
+        position: absolute;
+        top: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px;
+
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        color: var(--blue);
+
+        border: 1px solid var(--blue);
+        border-radius: 4px;
+
+        background-color: var(--white);
+    }
+}
