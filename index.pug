@@ -11,48 +11,52 @@ html(lang="en")
         link(rel="stylesheet" href="css/main.min.css")
     body
         header.header
-            div.header__inner.content-wrapper
-                img(class="header__logo" src="assets/img/logo.svg" alt="Логотип")
-                div.header__auth
-                    button(class="header__login button button--clear text text--m" type="button") Войти<span>&nbsp;в аккаунт</span>
-                    button(class="header__signup button button--blue text text--m" type="button") Зарегистрироваться
+            .header__inner.content-wrapper
+                img.header__logo(src="assets/img/logo.svg" alt="Логотип")
+                .header__auth
+                    button.header__login.button.button--clear.text.text--m(type="button") Войти<span>&nbsp;в аккаунт</span>
+                    button.header__signup.button.button--blue.text.text--m(type="button") Зарегистрироваться
         main.main
             //- экран "Напиши курсовую с нейросетью за 5 минут"
             //- section.hero.hero-work
-            //-     div.hero__inner.content-wrapper
+            //-     .hero__inner.content-wrapper
             //-         h1.hero__heading.heading.heading--l Напиши курсовую <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
             //-         p.hero__text.text.text--l Генерируй содержание, получай готовую работу и&nbsp;редактируй онлайн!
             section.hero.hero-task
-                div.hero__inner.content-wrapper
+                .hero__inner.content-wrapper
                     h1.hero__heading.heading.heading--l Решай задачи <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
                     p.hero__text.text.text--l Трудное задание? Просто загрузи фото или пропиши задание текстом и&nbsp;получи ответ!
 
-                    div.hero-task__content
-                        div.hero-task__query
-                            label(class="hero-task__query-label text text--m" for="query-input") Твоя задача
-                            form(class="hero-task__form" action="#" method="post")
-                                div.hero-task__form-box
-                                    textarea(class="hero-task__textarea text text--m text--light" id="query-input" placeholder="Напиши подробно задачу")
-                                    label(class="hero-task__file-label hero-task__file-label--mobile text text--m" for="file") 
+                    .hero-task__content
+                        .hero-task__query
+                            label.hero-task__query-label.text.text--m(for="query-input") Твоя задача
+                            form.hero-task__form(action="#" method="post")
+                                .hero-task__form-box
+                                    textarea.hero-task__textarea.text.text--m.text--light(id="query-input" placeholder="Напиши подробно задачу")
+                                    label.hero-task__file-label.hero-task__file-label--mobile.text.text--m(for="file") 
                                         img(src="assets/img/file-img.svg" role="presentation")    
                                         span Или загрузи фото
                                     label.hero-task__file-label.hero-task__file-label--desktop
                                         img(src="assets/img/file-img.svg" role="presentation") 
                                         span.text.text--m.text--light Перетащи файл&nbsp;<label class="text text--m" for="file">или загрузи с компьютера</label>
-                                    input(class="hero-task__file-input visually-hidden" type="file" id="file")
-                                button(class="hero-task__button button button--blue" type="button") Решить задачу
-                            div.hero-task__counter.text.text--m
+                                    input.hero-task__file-input.visually-hidden(type="file" id="file")
+                                button.hero-task__button.button.button--blue(type="button") Решить задачу
+                            .hero-task__counter.text.text--m
                                 | У тебя&nbsp;<span data-js="attempts">8</span>&nbsp;генераций
-                                div.hero-task__tooltip.tooltip
+                                .hero-task__tooltip.tooltip
                                     img(src="assets/img/question.svg")
                                     span Тут будет какая-то подсказка
-                        div.hero-task__result
-                            div.hero-task__preview-text.text.text--m Решение задачи будет здесь
+                        .hero-task__result
+                            .loader-box(data-js="loader")
+                                .loader-box__loader
+                                p.loader-box__heading.text.text--m.text--bold Нейросеть решает твою задачу
+                                p.loader-box__text.text.text--m Это займет всего пару минут
+                            .hero-task__preview-text.text.text--m(data-js="previewText") Решение задачи будет здесь
 
             section.steps
-                div.steps__inner.content-wrapper
+                .steps__inner.content-wrapper
                     h2.steps__heading.heading.heading--m Написание курсовой&nbsp;&mdash; это просто!
-                    ul(class="steps__list" role="list") 
+                    ul.steps__list(role="list") 
                         li.steps__item
                             img(src="assets/img/step-1.png" role="presentation")
                             p.text.text--xl Напиши тему работы и нажми «Сгенерировать»
@@ -62,27 +66,27 @@ html(lang="en")
                         li.steps__item
                             img(src="assets/img/step-3.png" role="presentation")
                             p.text.text--xl Редактируй онлайн, сохраняй в Word, отправляй преподавателям
-                    button(class="steps__button button button--blue text text--m" type="button") Сгенерировать работу
+                    button.steps__button.button.button--blue.text.text--m(type="button") Сгенерировать работу
 
             section.solution
-                div.solution__inner.content-wrapper
-                    div.solution__content
-                        div.solution__heading-text.text.text--xl Подробная инструкция
+                .solution__inner.content-wrapper
+                    .solution__content
+                        .solution__heading-text.text.text--xl Подробная инструкция
                         h2.solution__heading.heading.heading--m Как написать курсовую работу с&nbsp;нейросетью
                         //- тут в дальнейшем будет видео
-                        img(class="solution__video-plug" src="assets/img/solution_video.png")
-                        ol(class="solution__list")
+                        img.solution__video-plug(src="assets/img/solution_video.png")
+                        ol.solution__list
                             li.solution__item.text.text--m.text--light Жили-были в далеком лесу три маленьких енота: Рыжик, Серый и Пушистик. Они были лучшими друзьями и всегда веселились вместе.
                             li.solution__item.text.text--m.text--light Однажды, когда они гуляли по лесу, они обнаружили загадочный ларец. Изнутри вылетела волшебная фея.
                             li.solution__item.text.text--m.text--light Рыжик сразу решился и загадал, чтобы весь лес был полон вкусных орехов.
                             li.solution__item.text.text--m.text--light Серый задумался и загадал, чтобы у всех животных в лесу было достаточно еды и тепла.
-                        button(class="solution__button button button--blue text text--m" type="button") Сгенерировать работу
+                        button.solution__button.button.button--blue.text.text--m(type="button") Сгенерировать работу
 
             - var tariffCards = [{label: 'Генерация 3-х работ', tip: 'Тут подсказкsadasdasdas dsd asd as dasа для карточки', price: '640' }, {label: 'Генерация 10-и работ', tip: 'Тут подсказка для карточки', price: '2500' },{label: 'Генерация 3-х работ', tip: 'Тут подсказка для карточки', price: '640' }]
 
             section.tariffs
-                div.tariffs__inner.content-wrapper
-                    div.tariffs__header-box
+                .tariffs__inner.content-wrapper
+                    .tariffs__header-box
                         h2.tariffs__heading.heading.heading--m Выбери число генераций
                         .tariffs__toggler
                             input.tariffs__toggle-input.visually-hidden(type="radio" name="tariff" id="tariff_monthly" value="monthly" checked)
@@ -97,10 +101,10 @@ html(lang="en")
                             li.tariffs__card
                                 h3.tariffs__card-label
                                     span.tariffs__card-label-text.text.text--m #{card.label}
-                                    div.tooltip
+                                    .tooltip
                                         img(src="assets/img/question.svg")
                                         span Тут будет какая-то подсказка
-                                div.traiffs__price #{card.price}&nbsp;₽
+                                .traiffs__price #{card.price}&nbsp;₽
                                 ul.tariffs__card-list(role="list")  
                                     li.tariffs__card-list-item.text.text--m.text--light Выгода номер один
                                     li.tariffs__card-list-item.text.text--m.text--light Выгода номер два
@@ -114,7 +118,7 @@ html(lang="en")
                                     span.tariffs__card-label-text.text.text--m #{card.label}
                                     img(src="assets/img/question.svg" role="presentation")
                                     span.tariffs__card-label-tip #{card.tip}
-                                div.traiffs__price #{card.price}&nbsp;₽
+                                .traiffs__price #{card.price}&nbsp;₽
                                 ul.tariffs__card-list(role="list")  
                                     li.tariffs__card-list-item.text.text--m.text--light Выгода номер один
                                     li.tariffs__card-list-item.text.text--m.text--light Выгода номер два
@@ -124,28 +128,28 @@ html(lang="en")
             - var works = [{name: 'Маркетинговый анализ деятельности фирмы', fileType: 'DOC', unique: '97.7', symbols: '1283'}, {name: 'Маркетинговый анализ фирмы', fileType: 'PDF', unique: '55', symbols: '300'}, {name: 'Анализвываываывавыаываываываываываываыва', fileType: 'EXL', unique: '100', symbols: '3'}, {name: 'Маркетинговый анализ фирмы', fileType: 'PDF', unique: '55', symbols: '300'}, {name: 'Анализвываываывавыаываываываываываываыва', fileType: 'EXL', unique: '100', symbols: '3'}];
 
             section.works
-                div.works__inner.content-wrapper
-                    div.works__content 
-                        div.works__heading-text.text.text--xl Написаны искусственным интеллектом
-                        div.works__swiper-header
+                .works__inner.content-wrapper
+                    .works__content 
+                        .works__heading-text.text.text--xl Написаны искусственным интеллектом
+                        .works__swiper-header
                             h2.works__heading.heading.heading--m Примеры готовых работ
-                            div.works__swiper-controls
-                                button(class="works__swiper-controls-button works__swiper-controls-button--prev" aria-label="Предыдущая работа")
+                            .works__swiper-controls
+                                button.works__swiper-controls-button.works__swiper-controls-button--prev(aria-label="Предыдущая работа")
                                     img(src="assets/img/caret-right.svg" role="presentation")
-                                button(class="works__swiper-controls-button works__swiper-controls-button--next" aria-label="Следующая работа")
+                                button.works__swiper-controls-button.works__swiper-controls-button--next(aria-label="Следующая работа")
                                     img(src="assets/img/caret-right.svg" role="presentation")
-                        div(class="works__list swiper" data-js="worksSwiper")
-                            div.swiper-wrapper
+                        .works__list.swiper(data-js="worksSwiper")
+                            .swiper-wrapper
                                 each work in works
-                                    div.works__item.swiper-slide
+                                    .works__item.swiper-slide
                                         h3.works__item-title.text.text--m #{work.name}
-                                        div.works__item-label.works__item-label--unique
+                                        .works__item-label.works__item-label--unique
                                             img(src="assets/img/like.png" role="presentation")
-                                            div.works__item-label-text.text.text--s.text--light #{work.unique}% антиплагиат
-                                        div.works__item-label
+                                            .works__item-label-text.text.text--s.text--light #{work.unique}% антиплагиат
+                                        .works__item-label
                                             img(src="assets/img/pen.png" role="presentation")
-                                            div.works__item-label-text.text.text--s.text--light #{work.symbols}&nbsp;<span>символов</span>
-                                        div.works__file.text.text--m #{work.fileType}
+                                            .works__item-label-text.text.text--s.text--light #{work.symbols}&nbsp;<span>символов</span>
+                                        .works__file.text.text--m #{work.fileType}
 
             - var subjectsAll = [{name: 'Математика', link: '#link'}, {name: 'Еще математика', link: '#link'}, {name: 'Естественный', link: '#link'}, {name: 'Еще естественный', link: '#link'}, {name: 'Гуманитарный', link: '#link'}, {name: 'Еще гуманитарный', link: '#link'}, {name: 'Популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}];
             - var subjectsTech = [{name: 'Математика', link: '#link'}, {name: 'Еще математика', link: '#link'}];
@@ -153,67 +157,67 @@ html(lang="en")
             - var subjectsHumanitarian = [{name: 'Гуманитарный', link: '#link'}, {name: 'Еще гуманитарный', link: '#link'}];
             - var subjectsPopular = [{name: 'Популярный', link: '#link'}, {name: 'Еще популярный', link: '#link'}];
 
-            section(class="listings" data-js="listings")
-                div.listings__inner.content-wrapper
+            section.listings(data-js="listings")
+                .listings__inner.content-wrapper
                     h2.listings__heading.heading.heading--m Курсовые по другим предметам
-                    form(class="search-form" action="#" method="get" data-js="listingsForm")
-                        div.search-form__field
-                            input(class="search-form__input" type="text" maxlength="100" placeholder="Найти предмет" aria-label="Найти предмет" data-js="searchInput")
-                            button(class="search-form__reset-btn" type="button" data-js="clearInput")
+                    form.search-form(action="#" method="get" data-js="listingsForm")
+                        .search-form__field
+                            input.search-form__input(type="text" maxlength="100" placeholder="Найти предмет" aria-label="Найти предмет" data-js="searchInput")
+                            button.search-form__reset-btn(type="button" data-js="clearInput")
                                 span.visually-hidden Очистить поле поиска
                                 img(src="assets/img/close.svg" role="presentation")
-                            div.search-form__decor-loupe
+                            .search-form__decor-loupe
                                 img(src="assets/img/search.svg" role="presentation")
-                    div(class="listings__control" data-js="listingsTabButtons" role="tablist")
-                        button(class="listings__category-button" type="button" tabindex="0" role="tab" aria-controls="all" aria-selected="true")
+                    .listings__control(data-js="listingsTabButtons" role="tablist")
+                        button.listings__category-button(type="button" tabindex="0" role="tab" aria-controls="all" aria-selected="true")
                             span.text.text--m Все&nbsp;предметы
-                        button(class="listings__category-button" type="button" tabindex="-1" role="tab" aria-controls="tech" aria-selected="false")
+                        button.listings__category-button(type="button" tabindex="-1" role="tab" aria-controls="tech" aria-selected="false")
                             span.text.text--m Технические
-                        button(class="listings__category-button" type="button" tabindex="-1" role="tab" aria-controls="natural" aria-selected="false")
+                        button.listings__category-button(type="button" tabindex="-1" role="tab" aria-controls="natural" aria-selected="false")
                             span.text.text--m Естественные
-                        button(class="listings__category-button" type="button" tabindex="-1" role="tab" aria-controls="humanitarian" aria-selected="false")
+                        button.listings__category-button(type="button" tabindex="-1" role="tab" aria-controls="humanitarian" aria-selected="false")
                             span.text.text--m Гуманитарные
-                        button(class="listings__category-button" type="button" tabindex="-1" role="tab" aria-controls="popular" aria-selected="false")
+                        button.listings__category-button(type="button" tabindex="-1" role="tab" aria-controls="popular" aria-selected="false")
                             span.text.text--m Популярные
 
-                    div(class="listings__category-tabs" data-js="categoryTabsRoot")
-                        div(class="listings__category-tab" data-js="linksContainer" id="all" role="tabpanel" data-is-active)
-                            ul(class="listings__subjects-list" role="list")
+                    .listings__category-tabs(data-js="categoryTabsRoot")
+                        .listings__category-tab(data-js="linksContainer" id="all" role="tabpanel" data-is-active)
+                            ul.listings__subjects-list(role="list")
                                 each subject in subjectsAll
                                     li.listings__subject
-                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
-                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white(type="button") Показать еще 7 предмета
 
-                        div(class="listings__category-tab" data-js="linksContainer" id="tech" role="tabpanel")
-                            ul(class="listings__subjects-list" role="list")
+                        .listings__category-tab(data-js="linksContainer" id="tech" role="tabpanel")
+                            ul.listings__subjects-list(role="list")
                                 each subject in subjectsTech
                                     li.listings__subject
-                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
-                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white(type="button") Показать еще 2 предмета
 
-                        div(class="listings__category-tab" data-js="linksContainer" id="natural" role="tabpanel")
-                            ul(class="listings__subjects-list" role="list")
+                        .listings__category-tab(data-js="linksContainer" id="natural" role="tabpanel")
+                            ul.listings__subjects-list(role="list")
                                 each subject in subjectsNatural
                                     li.listings__subject
-                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
-                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white(type="button") Показать еще 23 предмета
 
-                        div(class="listings__category-tab" data-js="linksContainer" id="humanitarian" role="tabpanel")
-                            ul(class="listings__subjects-list" role="list")
+                        .listings__category-tab(data-js="linksContainer" id="humanitarian" role="tabpanel")
+                            ul.listings__subjects-list(role="list")
                                 each subject in subjectsHumanitarian
                                     li.listings__subject
-                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
-                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white(type="button") Показать еще 62 предмета
 
-                        div(class="listings__category-tab" data-js="linksContainer" id="popular" role="tabpanel")
-                            ul(class="listings__subjects-list" role="list")
+                        .listings__category-tab(data-js="linksContainer" id="popular" role="tabpanel")
+                            ul.listings__subjects-list(role="list")
                                 each subject in subjectsPopular
                                     li.listings__subject
-                                        a(class="listings__link text text--m text--light" href=subject.link) #{subject.name}
-                            button.listings__subjects-button.button.button--white Показать еще 124 предмета
+                                        a.listings__link.text.text--m.text--light(href=subject.link) #{subject.name}
+                            button.listings__subjects-button.button.button--white(type="button") Показать еще 124 предмета
 
             section.seo 
-            div.seo__inner.content-wrapper
+            .seo__inner.content-wrapper
                 h2 SEO текст
                 p Забудьте о трудоемком написании курсовых работ – наша нейросеть сделает это за вас, обеспечивая высокий уровень уникальности и качества. Воспользуйтесь удобным чат-ботом, который будет направлять вас в процессе написания.
                 p Наши пользователи не только экономят свое время и усилия, но и получают тексты, соответствующие всем требованиям научных работ. Сервис обеспечивает возможность не только написания, учитывая специфику каждой темы, но и редактирования текстов. Создайте свою курсовую легко, быстро и качественно с нашим сервисом.
@@ -232,39 +236,89 @@ html(lang="en")
             - var paymentMethods = [{name: 'Visa', file: 'visa.svg'}, {name: 'MasterCard', file: 'mastercard.svg'}, {name: 'Мир', file: 'mir.svg'}, {name: 'ЮMoney', file: 'umoney.png'}, {name: 'Qiwi', file: 'qiwi.svg'}, {name: 'Система быстрых платежей', file: 'sbp.svg'}, {name: 'СберPay', file: 'sberpay.svg'}]
 
         footer.footer
-            div.footer__inner.content-wrapper 
-                div.footer__content
-                    div.footer__main
-                        div.footer__column
-                            img(class="footer__logo" src="assets/img/logo-inverted.svg" alt="Логотип")
-                            a(class="footer__link footer__link--email text" href="mailto:support@study.ai") support@study.ai
+            .footer__inner.content-wrapper 
+                .footer__content
+                    .footer__main
+                        .footer__column
+                            img.footer__logo(src="assets/img/logo-inverted.svg" alt="Логотип")
+                            a.footer__link.footer__link--email.text(href="mailto:support@study.ai") support@study.ai
                             p.footer__schedule.text.text--m.text--light Пиши с&nbsp;10:00&nbsp;&dash; 19:30
-                        div.footer__column
+                        .footer__column
                             h3.footer__list-title.text.text--m Курсовые по предметам
-                            ul(class="footer__list" role="list")
+                            ul.footer__list(role="list")
                                 each link in footerSubjects
                                     li.footer__list-item
-                                        a(class="footer__link text text--m text--light" href=`${link.url}` target="_blank") #{link.name}
+                                        a.footer__link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
                                 li.footer__list-item
-                                    a(class="footer__link text text--m text--light" href="#" target="_blank") Все предметы
-                        div.footer__column
+                                    a.footer__link.text.text--m.text--light(href="#" target="_blank") Все предметы
+                        .footer__column
                             h3.footer__list-title.text.text--m Другие GPT инструменты
-                            ul(class="footer__list" role="list")
+                            ul.footer__list(role="list")
                                 each link in footerTypes
                                     li.footer__list-item
-                                        a(class="footer__link text text--m text--light" href=`${link.url}` target="_blank") #{link.name}
-                        div.footer__column.footer__column--about
+                                        a.footer__link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
+                        .footer__column.footer__column--about
                             h3.footer__list-title.text.text--m О сервисе
-                            ul(class="footer__list" role="list")
+                            ul.footer__list(role="list")
                                 each link in footerAbout
                                     li.footer__list-item
-                                        a(class="footer__link text text--m text--light" href=`${link.url}` target="_blank") #{link.name}
-                    div.footer__additional
-                        p(class="footer__copyright text text--m text--light") &copy;<span data-js="copyrightYear">2024</span>&nbsp;Все права защищены
-                        a(class="footer__link footer__link--privacy text text--m text--light" href="#" target="_blank") Пользовательское соглашение
-                        ul(class="footer__payment" role="list")
+                                        a.footer__link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
+                    .footer__additional
+                        p.footer__copyright.text.text--m.text--light 
+                            | &copy;<span data-js="copyrightYear">2024</span>&nbsp;Все права защищены
+                        a.footer__link.footer__link--privacy.text.text--m.text--light(href="#" target="_blank") Пользовательское соглашение
+                        ul.footer__payment(role="list")
                             each payment in paymentMethods
                                 li.footer__payment-item
                                     img(src=`assets/img/${payment.file}`, alt=`${payment.name}`)
+
+        //- .modal.modal--signup(role="dialog" data-is-open="false")
+        //-     .modal__content 
+        //-         button.modal__close-button(type="button")
+        //-             img(src="assets/img/close.svg")
+        //-         .modal__heading.text.text--m Зарегистрироваться
+        //-         .modal__title Зарегистрируйся, чтобы увидеть решение задачи
+        //-         form.modal__form(action="#" method="post")
+        //-             input.modal__form-input.text.text--m.text--light(type="email" name="email" placeholder="Email" required)
+        //-             input.modal__form-input.text.text--m.text--light(type="password" name="password" placeholder="Пароль" required)
+        //-             input.modal__form-input.text.text--m.text--light(type="password" name="confirm_password" placeholder="Повтори пароль" required)
+        //-             button.modal__form-button.button.button--blue Зарегистрироваться
+
+        //- .modal.modal--login(role="dialog" data-is-open="false")
+        //-     .modal__content 
+        //-         button.modal__close-button(type="button")
+        //-             img(src="assets/img/close.svg")
+        //-         .modal__heading.text-text--m Войти
+        //-         .modal__title Войди в аккаунт, чтобы увидеть решение задачи
+        //-         form.modal__form(action="#" method="post")
+        //-             input.modal__form-input.text--m.text--light(type="email" name="email" placeholder="Email" required)
+        //-             input.modal__form-input.text--m.text--light(type="password" name="password" placeholder="Пароль" required)
+        //-             button.modal__form-button.button.button--blue Войти
+        //-             a.modal__form-remind-link.button.button--clear(href="#" target="_blank") Забыл пароль?
+
+        //- .modal.modal--login(role="dialog" data-is-open="false")
+        //-     .modal__content 
+        //-         button.modal__close-button(type="button")
+        //-             img(src="assets/img/close.svg")
+        //-         .modal__heading.text-text--m Войти
+        //-         .modal__title Войди в аккаунт, чтобы увидеть полную курсовую
+        //-         form.modal__form(action="#" method="post")
+        //-             input.modal__form-input.text--m.text--light(type="email" name="email" placeholder="Email" required)
+        //-             input.modal__form-input.text--m.text--light(type="password" name="password" placeholder="Пароль" required)
+        //-             button.modal__form-button.button.button--blue Войти
+        //-             a.modal__form-remind-link.button.button--clear(href="#" target="_blank") Забыл пароль?
+
+        //- .modal.modal--signup(role="dialog" data-is-open="false")
+        //-     .modal__content 
+        //-         button.modal__close-button(type="button")
+        //-             img(src="assets/img/close.svg")
+        //-         .modal__heading.text.text--m Зарегистрироваться
+        //-         .modal__title Зарегистрируйся, чтобы увидеть полную курсовую
+        //-         form.modal__form(action="#" method="post")
+        //-             input.modal__form-input.text.text--m.text--light(type="email" name="email" placeholder="Email" required)
+        //-             input.modal__form-input.text.text--m.text--light(type="password" name="password" placeholder="Пароль" required)
+        //-             input.modal__form-input.text.text--m.text--light(type="password" name="confirm_password" placeholder="Повтори пароль" required)
+        //-             button.modal__form-button.button.button--blue Зарегистрироваться
+
 
         script(src="js/main.min.js" type="module")

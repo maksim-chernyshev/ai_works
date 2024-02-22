@@ -9,7 +9,10 @@
     padding: 12px 22px;
     border: 0;
     border-radius: 10px;
+    font-size: var(--font-text-16);
+    line-height: var(--font-lh-24);
     font-weight: 500;
+    text-decoration: none;
     background-color: transparent;
     cursor: pointer;
     transition: color 0.2s, background-color 0.2s;
@@ -17,6 +20,8 @@
     @media (min-width: 1024px) {
         width: max-content;
         padding: 14px 20px;
+        font-size: var(--font-text-18);
+        line-height: var(--font-lh-28);
     }
 
     &--blue {

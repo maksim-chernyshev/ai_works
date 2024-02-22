@@ -146,10 +146,12 @@
 }
 
 .hero-task__result {
+    box-sizing: border-box;
     display: grid;
     align-items: center;
     min-height: 250px;
     margin-top: 16px;
+    padding: 16px;
     background-color: var(--white);
     border-radius: 12px;
 
