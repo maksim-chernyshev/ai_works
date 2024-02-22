@@ -1,0 +1,35 @@
+.paywall {
+    box-sizing: border-box;
+    align-self: end;
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(35, 141, 239, 0.24);
+    background-color: var(--blue-light);
+    box-shadow: 0px 2px 4px 0px #2031421f, 0px 2px 20px 0px #284b6d1f;
+
+    &--task {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        width: calc(100% - 32px);
+    }
+
+    p {
+        max-width: 293px;
+        text-align: center;
+    }
+}
+
+.paywall__button {
+    span {
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: inline;
+        }
+    }
+}
