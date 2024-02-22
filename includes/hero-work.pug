@@ -1,0 +1,28 @@
+section.hero.hero-work
+    .hero__inner.content-wrapper
+        h1.hero__heading.heading.heading--l Напиши курсовую <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
+        p.hero__text.text.text--l Генерируй содержание, получай готовую работу и&nbsp;редактируй онлайн!
+
+        .hero-work__content
+            .hero-work__query
+                label.hero-work__label.text.text--m(for="query-input") Напиши тему работы
+                form.hero-work__form(action="#" method="post")
+                    input.hero-work__input.text.text--m.text--light(type="text" name="query" id="query-input" placeholder="Напиши тему работы")
+                    button.hero-work__button.button.button--blue(type="button") Сгенерировать
+                .hero-work__counter.text.text--m
+                    | У тебя&nbsp;<span data-js="attempts">8</span>&nbsp;генераций
+                    .hero-work__tooltip.tooltip
+                        img(src="assets/img/question.svg")
+                        span Тут будет какая-то подсказка
+            .hero-work__result
+                .hero-work__label.text.text--m Готовая работа
+                .hero-work__editor-box
+                    //- | <div style="justify-self: center;">Заглушка под редактор</div>
+                    //-     .loader-box(data-js="loader")
+                    //-         .loader-box__loader
+                    //-         p.loader-box__heading.text.text--m.text--bold Нейросеть решает твою задачу
+                    //-         p.loader-box__text.text.text--m Это займет всего пару минут
+                .paywall.paywall--work(data-js="paywall")
+                    p.text.text--m Авторизуйся и&nbsp;оплати подписку, чтобы получить решение
+                    button.paywall__button-login.button.button--blue(data-js="openLogin" type="button") Авторизоваться<span>&nbsp;и&nbsp;оплатить</span>
+                    button.paywall__button-reset.button.button--clear(data-js="resetForm" type="button") Не&nbsp;уверен&nbsp;&mdash; покажи 1&nbsp;раздел

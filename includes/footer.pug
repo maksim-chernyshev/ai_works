@@ -1,0 +1,41 @@
+- var footerSubjects = [{name: 'Алгебра', url: '#link'}, {name: 'Английский язык', url: '#link'}, {name: 'Анатомия', url: '#link'}, {name: 'Архитектура', url: '#link'}];
+- var footerTypes = [{name: 'Решение задач', url: '#link'}, {name: 'Рефераты', url: '#link'}, {name: 'Курсовые работы', url: '#link'}, {name: 'Доклады', url: '#link'}, {name: 'Эссе', url: '#link'}];
+- var footerAbout = [{name: 'Тарифы', url: '#link'}, {name: 'Оплата и реквизиты', url: '#link'}, {name: 'Политика возврата', url: '#link'}, {name: 'Контакты', url: '#link'}];
+- var paymentMethods = [{name: 'Visa', file: 'visa.svg'}, {name: 'MasterCard', file: 'mastercard.svg'}, {name: 'Мир', file: 'mir.svg'}, {name: 'ЮMoney', file: 'umoney.png'}, {name: 'Qiwi', file: 'qiwi.svg'}, {name: 'Система быстрых платежей', file: 'sbp.svg'}, {name: 'СберPay', file: 'sberpay.svg'}]
+
+footer.footer
+    .footer__inner.content-wrapper 
+        .footer__content
+            .footer__main
+                .footer__column
+                    img.footer__logo(src="assets/img/logo-inverted.svg" alt="Логотип")
+                    a.footer__email.link.text(href="mailto:support@study.ai") support@study.ai
+                    p.footer__schedule.text.text--m.text--light Пиши с&nbsp;10:00&nbsp;&dash; 19:30
+                .footer__column
+                    h3.footer__list-title.text.text--m Курсовые по предметам
+                    ul.footer__list(role="list")
+                        each link in footerSubjects
+                            li.footer__list-item
+                                a.link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
+                        li.footer__list-item
+                            a.link.text.text--m.text--light(href="#" target="_blank") Все предметы
+                .footer__column
+                    h3.footer__list-title.text.text--m Другие GPT инструменты
+                    ul.footer__list(role="list")
+                        each link in footerTypes
+                            li.footer__list-item
+                                a.link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
+                .footer__column.footer__column--about
+                    h3.footer__list-title.text.text--m О сервисе
+                    ul.footer__list(role="list")
+                        each link in footerAbout
+                            li.footer__list-item
+                                a.link.text.text--m.text--light(href=`${link.url}` target="_blank") #{link.name}
+            .footer__additional
+                p.footer__copyright.text.text--m.text--light 
+                    | &copy;<span data-js="copyrightYear">2024</span>&nbsp;Все права защищены
+                a.footer__privacy.link.text.text--m.text--light(href="#" target="_blank") Пользовательское соглашение
+                ul.footer__payment(role="list")
+                    each payment in paymentMethods
+                        li.footer__payment-item
+                            img(src=`assets/img/${payment.file}`, alt=`${payment.name}`)

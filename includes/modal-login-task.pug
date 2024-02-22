@@ -1,0 +1,11 @@
+.modal.modal--login(role="dialog" data-is-open="false")
+    .modal__content 
+        button.modal__close-button(type="button")
+            img(src="assets/img/close.svg")
+        .modal__heading.text-text--m Войти
+        .modal__title Войди в аккаунт, чтобы увидеть решение задачи
+        form.modal__form(action="#" method="post")
+            input.modal__form-input.text--m.text--light(type="email" name="email" placeholder="Email" required)
+            input.modal__form-input.text--m.text--light(type="password" name="password" placeholder="Пароль" required)
+            button.modal__form-button.button.button--blue Войти
+            a.modal__form-remind-link.button.button--clear(href="#" target="_blank") Забыл пароль?

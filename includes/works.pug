@@ -1,0 +1,25 @@
+- var works = [{name: 'Маркетинговый анализ деятельности фирмы', fileType: 'DOC', unique: '97.7', symbols: '1283'}, {name: 'Маркетинговый анализ фирмы', fileType: 'PDF', unique: '55', symbols: '300'}, {name: 'Анализвываываывавыаываываываываываываыва', fileType: 'EXL', unique: '100', symbols: '3'}, {name: 'Маркетинговый анализ фирмы', fileType: 'PDF', unique: '55', symbols: '300'}, {name: 'Анализвываываывавыаываываываываываываыва', fileType: 'EXL', unique: '100', symbols: '3'}];
+
+section.works
+    .works__inner.content-wrapper
+        .works__content 
+            .works__heading-text.text.text--xl Написаны искусственным интеллектом
+            .works__swiper-header
+                h2.works__heading.heading.heading--m Примеры готовых работ
+                .works__swiper-controls
+                    button.works__swiper-controls-button.works__swiper-controls-button--prev(aria-label="Предыдущая работа")
+                        img(src="assets/img/caret-right.svg" role="presentation")
+                    button.works__swiper-controls-button.works__swiper-controls-button--next(aria-label="Следующая работа")
+                        img(src="assets/img/caret-right.svg" role="presentation")
+            .works__list.swiper(data-js="worksSwiper")
+                .swiper-wrapper
+                    each work in works
+                        .works__item.swiper-slide
+                            h3.works__item-title.text.text--m #{work.name}
+                            .works__item-label.works__item-label--unique
+                                img(src="assets/img/like.png" role="presentation")
+                                .works__item-label-text.text.text--s.text--light #{work.unique}% антиплагиат
+                            .works__item-label
+                                img(src="assets/img/pen.png" role="presentation")
+                                .works__item-label-text.text.text--s.text--light #{work.symbols}&nbsp;<span>символов</span>
+                            .works__file.text.text--m #{work.fileType}
