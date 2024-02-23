@@ -1,0 +1,34 @@
+section.hero.hero-task
+    .hero__inner.content-wrapper
+        h1.hero__heading.heading.heading--l Решай задачи <br> с&nbsp;нейросетью <mark>за&nbsp;5&nbsp;минут</mark>
+        p.hero__text.text.text--l Трудное задание? Просто загрузи фото или пропиши задание текстом и&nbsp;получи ответ!
+
+        .hero-task__content
+            .hero-task__query
+                label.hero-task__query-label.text.text--m(for="query-input") Твоя задача
+                form.hero-task__form(action="#" method="post")
+                    .hero-task__form-box
+                        textarea.hero-task__textarea.text.text--m.text--light(id="query-input" name="query" placeholder="Напиши подробно задачу")
+                        label.hero-task__file-label.hero-task__file-label--mobile.text.text--m(for="file") 
+                            img(src="@img/file-img.svg" role="presentation")    
+                            span Или загрузи фото
+                        label.hero-task__file-label.hero-task__file-label--desktop
+                            img(src="@img/file-img.svg" role="presentation") 
+                            span.text.text--m.text--light Перетащи файл&nbsp;<label class="text text--m" for="file">или загрузи с компьютера</label>
+                        input.hero-task__file-input.visually-hidden(type="file" id="file" name="file")
+                    button.hero-task__button.button.button--blue(type="button") Решить задачу
+                .hero-task__counter.text.text--m
+                    | У тебя&nbsp;<span data-js="attempts">8</span>&nbsp;генераций
+                    .hero-task__tooltip.tooltip
+                        img(src="@img/question.svg")
+                        span Тут будет какая-то подсказка
+            .hero-task__result
+                .hero-task__preview-text.text.text--m(data-js="previewText") Решение задачи будет здесь
+                .hero-task__result-text(data-js="renderedResult" data-hidden)
+                .loader-box(data-js="loader" data-hidden)
+                    .loader-box__loader
+                    p.loader-box__heading.text.text--m.text--bold Нейросеть решает твою задачу
+                    p.loader-box__text.text.text--m Это займет всего пару минут
+                .paywall.paywall--task(data-js="paywall" data-hidden)
+                    p.text.text--m Авторизуйся и&nbsp;оплати подписку, чтобы получить решение
+                    button.paywall__button.button.button--blue(data-js="openLogin") Авторизоваться<span>&nbsp;и&nbsp;оплатить</span>

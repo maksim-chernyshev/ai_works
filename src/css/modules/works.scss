@@ -5,13 +5,13 @@
 
 .works__content {
     overflow-x: hidden;
-    padding: 16px;
+    padding: 16px 16px 0 16px;
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     background-color: var(--gray-light);
 
     @media (min-width: 1024px) {
-        padding: 40px 48px 48px;
+        padding: 40px 48px 24px;
         border-radius: 24px;
     }
 }
@@ -24,10 +24,10 @@
 .works__swiper-header {
     display: grid;
     grid-auto-flow: column;
-    justify-content: space-between;
-    margin: 4px 0 16px;
+    margin-top: 4px;
 
     @media (min-width: 1024px) {
+        justify-content: space-between;
         margin-bottom: 32px;
     }
 }
@@ -73,16 +73,23 @@
     text-align: var(--heading-text-align);
 }
 
-// todo временно е решение
 .works__list {
-    .swiper-wrapper {
-        display: flex;
-        gap: 16px;
+    box-sizing: border-box;
+    width: calc(100% + 32px);
+    margin: -8px 0 0 -16px;
+    padding: 24px;
+
+    @media (min-width: 1024px) {
+        width: calc(100% + 96px);
+        margin: -8px 0 0 -48px;
+        padding: 24px 48px 24px 48px;
     }
 }
 
 .works__item {
+    box-sizing: border-box;
     display: grid;
+    width: 75vw;
     padding: 16px;
     border-radius: 12px;
     background-color: var(--white);
@@ -131,7 +138,7 @@
     height: 89px;
     margin: 20px 0;
     color: var(--white);
-    background-image: url("../assets/img/file.png");
+    background-image: url("..img/file.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

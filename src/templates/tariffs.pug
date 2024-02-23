@@ -1,0 +1,42 @@
+- var tariffCards = [{label: 'Генерация 3-х работ', price: '640' }, {label: 'Генерация 10-и работ', price: '2500' },{label: 'Генерация 3-х работ', price: '640' }]
+
+section.tariffs
+    .tariffs__inner.content-wrapper
+        .tariffs__header-box
+            h2.tariffs__heading.heading.heading--m Выбери число генераций
+            .tariffs__toggler
+                input.tariffs__toggle-input.visually-hidden(type="radio" name="tariff" id="tariff_monthly" value="monthly" checked)
+                label.tariffs__toggle-button.button.tariffs__toggle-button--monthly(for="tariff_monthly")
+                    span.text.text--m
+                    | <span class="tariffs__toggle-button-desktop-text">Платить</span>&nbsp;ежемесячно
+                input.tariffs__toggle-input.visually-hidden(type="radio" name="tariff" id="tariff_annually" value="annually" aria-label="Выгоднее")
+                label.tariffs__toggle-button.button.tariffs__toggle-button--annually(for="tariff_annually")
+                    span.text.text--m Оплатить на год
+        ul.tariffs__cards(role="list" data-js="monthlyCards")
+            each card in tariffCards 
+                li.tariffs__card
+                    h3.tariffs__card-label
+                        span.tariffs__card-label-text.text.text--m #{card.label}
+                        .tooltip
+                            img(src="@img/question.svg")
+                            span Тут будет какая-то подсказка
+                    .traiffs__price #{card.price}&nbsp;₽
+                    ul.tariffs__card-list(role="list")  
+                        li.tariffs__card-list-item.text.text--m.text--light Выгода номер один
+                        li.tariffs__card-list-item.text.text--m.text--light Выгода номер два
+                        li.tariffs__card-list-item.text.text--m.text--light Выгода номер три
+                    button.tariffs__card-button.button.button--blue(type="button") Выбрать
+
+        ul.tariffs__cards(role="list" data-js="annuallyCards" data-hidden)
+            each card in tariffCards 
+                li.tariffs__card
+                    h3.tariffs__card-label
+                        span.tariffs__card-label-text.text.text--m #{card.label}
+                        img(src="@img/question.svg" role="presentation")
+                        span.tariffs__card-label-tip #{card.tip}
+                    .traiffs__price #{card.price}&nbsp;₽
+                    ul.tariffs__card-list(role="list")  
+                        li.tariffs__card-list-item.text.text--m.text--light Выгода номер один
+                        li.tariffs__card-list-item.text.text--m.text--light Выгода номер два
+                        li.tariffs__card-list-item.text.text--m.text--light Выгода номер три
+                    button.tariffs__card-button.button.button--blue(type="button") Выбрать

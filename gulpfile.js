@@ -1,45 +1,37 @@
-const { src, dest, parallel, watch } = require('gulp');
-const browserSync = require('browser-sync').create();
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify-es').default;
-const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const cleancss = require('gulp-clean-css');
+import gulp from 'gulp';
+import { path } from './gulp/config/path.js';
+import { plugins } from './gulp/config/plugins.js';
+import { copy } from './gulp/tasks/copy.js';
+import { reset } from './gulp/tasks/reset.js';
+import { html } from './gulp/tasks/html.js';
+import { scss } from './gulp/tasks/scss.js';
+import { js } from './gulp/tasks/js.js';
+import { server } from './gulp/tasks/server.js';
+import { zip } from './gulp/tasks/zip.js';
+import { images } from './gulp/tasks/images.js';
 
-function browsersync() {
-    browserSync.init({
-        server: { baseDir: 'dist/' },
-        notify: false,
-        online: true
-    })
+global.app = {
+    isBuild: process.argv.includes('--build'),
+    isDev: !process.argv.includes('--build'),
+    path: path,
+    gulp: gulp,
+    plugins: plugins
 }
 
-exports.browsersync = browsersync;
-
-exports.styles = styles;
-
-exports.default = parallel(styles, scripts, browsersync, startwatch);
-
-function styles() {
-    return src('src/css/main.scss')
-        .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-        .pipe(concat('main.min.css'))
-        .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-        .pipe(cleancss({ level: { 1: { specialComments: 0 } } }))
-        .pipe(dest('dist/css/'))
-        .pipe(browserSync.stream())
+function watcher() {
+    gulp.watch(path.watch.files, copy);
+    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.scss, scss);
+    gulp.watch(path.watch.js, js);
 }
 
-function scripts() {
-    return src('src/js/main.js')
-        .pipe(concat('main.min.js'))
-        .pipe(uglify())
-        .pipe(dest('dist/js/'))
-        .pipe(browserSync.stream())
-}
+const mainTasks = gulp.parallel(copy, html, scss, js, images);
 
-function startwatch() {
-    watch(['src/**/*.js', '!src/**/*.min.js'], scripts);
-    watch('src/css/**/*.scss', styles);
-    watch('dist/**/*.html').on('change', browserSync.reload);
-}
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+const deployZIP = gulp.series(reset, mainTasks, zip)
+
+export { dev };
+export { build };
+
+gulp.task('default', dev)

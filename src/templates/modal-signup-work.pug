@@ -1,0 +1,11 @@
+.modal.modal--signup(role="dialog" data-js="signupModal")
+    .modal__content 
+        button.modal__close-button(type="button" data-js="closeModal")
+            img(src="@img/close.svg")
+        .modal__heading.text.text--m Зарегистрироваться
+        .modal__title Зарегистрируйся, чтобы увидеть полную курсовую
+        form.modal__form(action="#" method="post")
+            input.modal__form-input.text.text--m.text--light(type="email" name="email" placeholder="Email" required)
+            input.modal__form-input.text.text--m.text--light(type="password" name="password" placeholder="Пароль" required)
+            input.modal__form-input.text.text--m.text--light(type="password" name="confirm_password" placeholder="Повтори пароль" required)
+            button.modal__form-button.button.button--blue Зарегистрироваться

@@ -37,7 +37,7 @@
         right: -6px;
         width: 174px;
         height: 60px;
-        background-image: url("../assets/img/offer-label.png");
+        background-image: url("..img/offer-label.png");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -194,7 +194,7 @@
         transform: translateY(-50%);
         width: 24px;
         height: 24px;
-        background-image: url("../assets/img/check.svg");
+        background-image: url("../check.svg");
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -213,7 +213,7 @@
 
 .tariffs__card:nth-child(2) {
     background-color: var(--blue);
-    background-image: url("../assets/img/card-bg.jpg");
+    background-image: url("..img/card-bg.jpg");
     background-repeat: no-repeat;
 
     @media (min-width: 1024px) {
@@ -232,7 +232,7 @@
         color: var(--white);
 
         &::before {
-            background-image: url("../assets/img/check-white.svg");
+            background-image: url("..img/check-white.svg");
         }
     }
 

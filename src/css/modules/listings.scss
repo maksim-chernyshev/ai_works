@@ -47,6 +47,11 @@
     &:hover {
         @media (min-width: 1024px) {
             background-color: var(--blue-light);
+
+            &[aria-selected="true"] {
+                color: var(--white);
+                background-color: var(--blue);
+            }
         }
     }
 
@@ -94,9 +99,6 @@
         column-gap: 96px;
         flex-wrap: wrap;
         max-height: 510px;
-    }
-
-    @media (min-width: 1024px) {
     }
 }
 
