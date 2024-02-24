@@ -22,7 +22,7 @@ export const path = {
     },
     watch: {
         js: `${srcFolder}/js/**/*.js`,
-        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp, svg}`,
+        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,ico,svg}`,
         scss: `${srcFolder}/css/**/*.scss`,
         html: `${srcFolder}/**/*.pug`,
         files: `${srcFolder}/files/**/*.*`,
