@@ -33,5 +33,6 @@ const deployZIP = gulp.series(reset, mainTasks, zip)
 
 export { dev };
 export { build };
+export { deployZIP };
 
 gulp.task('default', dev)
