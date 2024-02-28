@@ -6,8 +6,8 @@ section.hero.hero-task
         .hero-task__content
             .hero-task__query
                 label.hero-task__query-label.text.text--m(for="query-input") Твоя задача
-                form.hero-task__form(action="#" method="post")
-                    .hero-task__form-box
+                form.hero-task__form(action="#" method="post" data-js="queryForm")
+                    .hero-task__form-box(data-js="dropbox")
                         textarea.hero-task__textarea.text.text--m.text--light(id="query-input" name="query" placeholder="Напиши подробно задачу")
                         label.hero-task__file-label.hero-task__file-label--mobile.text.text--m(for="file") 
                             img(src="@img/file-img.svg" role="presentation")    
@@ -15,8 +15,8 @@ section.hero.hero-task
                         label.hero-task__file-label.hero-task__file-label--desktop
                             img(src="@img/file-img.svg" role="presentation") 
                             span.text.text--m.text--light Перетащи файл&nbsp;<label class="text text--m" for="file">или загрузи с компьютера</label>
-                        input.hero-task__file-input.visually-hidden(type="file" id="file" name="file")
-                    button.hero-task__button.button.button--blue(type="button") Решить задачу
+                        input.hero-task__file-input.visually-hidden(type="file" id="file" name="file" data-js="fileInput")
+                    button.hero-task__button.button.button--blue(type="button" data-js="submit") Решить задачу
                 .hero-task__counter.text.text--m
                     | У тебя&nbsp;<span data-js="attempts">8</span>&nbsp;генераций
                     .hero-task__tooltip.tooltip

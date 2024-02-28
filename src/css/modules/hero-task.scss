@@ -56,6 +56,33 @@
     }
 }
 
+.hero-task__form-box[data-ready-to-drop] {
+    border-color: var(--blue);
+
+    textarea {
+        background-color: var(--blue-light);
+    }
+
+    label {
+        background-color: var(--blue-light);
+    }
+
+    .hero-task__file-input {
+        position: static !important;
+    }
+}
+
+.hero-task__file-info {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    padding: 4px;
+    color: var(--blue);
+    border-radius: 4px;
+    background-color: var(--blue-light);
+}
+
 .hero-task__textarea {
     box-sizing: border-box;
     min-height: 160px;
@@ -113,6 +140,17 @@
             }
         }
     }
+}
+
+.hero-task__file-input::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .hero-task__counter {
